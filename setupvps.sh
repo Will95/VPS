@@ -144,7 +144,7 @@ echo "REQUIRES ROOT"
 exit 0
 fi
 yum install wget -y
-rpm -ivh https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
 rpm -Uvh java.rpm
 yum groupinstall "Xfce" "Desktop" -y

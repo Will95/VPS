@@ -1,6 +1,6 @@
 #!/bin/bash
 #########################################################################################
-# Created by DjRaPmAn                                                                   #
+# Created by DjRaPmAn (edit by Will)#
 #                                                                                       #
 # This Script will download and install needed packages for a working desktop           #
 # environment Due to bugs in centos 6 XFCE doesn't work correctly over VNC, so          #

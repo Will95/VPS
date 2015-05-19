@@ -28,34 +28,6 @@ VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
 ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
 IP=$(curl -s b2ez.net/ip/; echo)
 
-###############
-# centos 6 x86#
-###############
-#
-elif [[ "$OS" = "1" && "$VERSION" = "6" && "$ARCH" = "32" ]]
-then
-if [ $USER != 'root' ]
-then
-echo "REQUIRES ROOT"
-exit 0
-fi
-yum install wget -y
-rpm -ivh https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-wget http://javadl.sun.com/webapps/download/AutoDL?BundleId=68233 -O java.rpm
-rpm -Uvh java.rpm
-yum groupinstall "Xfce" "Desktop" -
-yum install -y nano unzip xkill firefox tigervnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
-clear
-echo ""
-echo "Enter a password for VNC"
-vncserver && vncserver -kill :1
-sed -i 's/twm/startxfce4/g' ~/.vnc/xstartup
-clear
-vncserver
-echo ""
-echo "you may now connect to the vncserver at  $IP:1 or $IP:5901"
-mkdir -p ~/jagexcache/runescape/LIVE
-rm -rf *.rpm
 
 ###############
 # centos 6 x64#

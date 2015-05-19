@@ -16,32 +16,13 @@
 # 10 November, 2012                                                                     #
 #########################################################################################
 
-read -p "What OS are you running? 'For Centos Enter 1' 'For Ubuntu Enter 2' " OS
-
-if [[ "$OS" != "1" && "$OS" != "2" ]]
-then
-echo "OS Not Supported"
-exit 0
-fi
-
-VERSION=$(cat /etc/redhat-release |awk '{print $3}' |sed 's/.[^.]*$//')
-ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
-IP=$(curl -s b2ez.net/ip/; echo)
-
-
 ###############
 # centos 6 x64#
 ###############
 #
-elif [[ "$OS" = "1" && "$VERSION" = "6" && "$ARCH" = "64" ]]
-then
-if [ $USER != 'root' ]
-then
-echo "REQUIRES ROOT"
-exit 0
-fi
 yum install wget -y
-rpm -ivh http://mirror.facebook.net/fedora/epel/6/x86_64/epel-release-6-7.noarch.rpm
+wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -ivh epel-release-6-8.noarch.rpm
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u31-b13/jdk-8u31-linux-x64.rpm -O jdk-8u31-linux-x64.rpm
 rpm -Uvh jdk-8u31-linux-x64.rpm
 yum groupinstall "Xfce" "Desktop" -y
@@ -57,7 +38,3 @@ echo ""
 echo "you may now connect to the vncserver at  $IP:1 or $IP:5901"
 mkdir -p ~/jagexcache/runescape/LIVE
 rm -rf *.rpm
-#
-####################
-#   END OF CENTOS  #
-####################

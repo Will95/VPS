@@ -23,8 +23,8 @@ IP=$(curl -s b2ez.net/ip/; echo)
 yum install wget -y
 wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -ivh epel-release-6-8.noarch.rpm
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u31-b13/jdk-8u31-linux-x64.rpm -O jdk-8u31-linux-x64.rpm
-rpm -Uvh jdk-8u31-linux-x64.rpm
+#wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u31-b13/jdk-8u31-linux-x64.rpm -O jdk-8u31-linux-x64.rpm
+#rpm -Uvh jdk-8u31-linux-x64.rpm
 yum groupinstall "Xfce" "Desktop" -y
 yum install -y nano unzip xkill firefox tigervnc-server xorg-x11-server-Xorg gdm xorg-x11-fonts-* libXtst-devel-*
 clear

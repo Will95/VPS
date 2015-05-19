@@ -144,7 +144,7 @@ echo "REQUIRES ROOT"
 exit 0
 fi
 yum install wget -y
-rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -ivh http://mirror.facebook.net/fedora/epel/6/x86_64/epel-release-6-7.noarch.rpm
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u31-b13/jdk-8u31-linux-x64.rpm -O jdk-8u31-linux-x64.rpm
 rpm -Uvh jdk-8u31-linux-x64.rpm
 yum groupinstall "Xfce" "Desktop" -y
